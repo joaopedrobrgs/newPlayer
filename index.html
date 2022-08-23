@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYER DE MÚSICAS</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <div id="musicPlayer">
+        <h4>MUSIC PLAYER</h4>
+        <audio autoplay id="musicTrack" src=""></audio>
+        <img id="musicAlbum" src="">
+        <h4 id="musicName">Unknown</h4>
+        <h4 id="artistName">Unknown</h4>
+        <div id="mainControls">
+            <img id="previousMusicBtn" class="mainButtons" src="./assets/icons/previous.png">
+            <div class="dialogMessage" id="previousMusicDialog">Música anterior</div>
+            <img id="playBtn" class="mainButtons" src="./assets/icons/play.png">
+            <div class="dialogMessage" id="playDialog">Iniciar música</div>
+            <img id="pauseBtn" class="mainButtons" src="./assets/icons/pause.png">
+            <div class="dialogMessage" id="pauseDialog">Pausar música</div>
+            <img id="nextMusicBtn" class="mainButtons" src="./assets/icons/next.png">
+            <div class="dialogMessage" id="nextMusicDialog">Próxima música</div>
+        </div>
+        <div id="musicTime">
+            <span id="actualTime"></span>
+            <span id="totalTime"></span>
+            <input id="timeBar" type="range" min="1" max="100" value="0">
+        </div>
+        <div id="secondaryControls">
+            <img id="backwardBtn" class="secondaryButtons" src="./assets/icons/backward.png">
+            <div class="dialogMessage" id="backwardDialog">Voltar 10seg</div>
+            <img id="decreaseSpeedBtn" class="secondaryButtons" src="./assets/icons/decrease.png">
+            <div class="dialogMessage" id="decreaseSpeedDialog">Reduzir velocidade</div>
+            <img id="randomBtn" class="secondaryButtons" src="./assets/icons/random.png">
+            <div class="dialogMessage" id="randomDialog">Mudar música aleatóriamente</div>
+            <img id="stopBtn" class="secondaryButtons" src="./assets/icons/stop.png">
+            <div class="dialogMessage" id="stopDialog">Parar música</div>
+            <div id="volumeContainer">
+                <img id="volumeImgShow" class="secondaryButtons" src="./assets/icons/volumeOn.png">
+                <img id="volumeImgHide" class="secondaryButtons" src="./assets/icons/volumeOn.png">
+                <div class="dialogMessage" id="volumeDialog">Alterar volume</div>
+                <input id="volumeBar" type="range" value="100" min="0" max="100">
+            </div>
+            <img id="increaseSpeedBtn" class="secondaryButtons" src="./assets/icons/increase.png">
+            <div class="dialogMessage" id="increaseSpeedDialog">Aumentar velocidade</div>
+            <img id="forwardBtn" class="secondaryButtons" src="./assets/icons/forward.png">
+            <div class="dialogMessage" id="forwardDialog">Avançar 10seg</div>
+        </div>
+    </div>
+
+
+    <div id="libraryContainer">
+        <img id="libraryIconOpen" src="./assets/icons/list.png">
+        <div class="dialogMessage" id="openLibraryDialog">Abrir livraria</div>
+        <img id="libraryIconClose" src="./assets/icons/list.png">
+        <div class="dialogMessage" id="closeLibraryDialog">Fechar livraria</div>
+        <div id="libraryIn" class="hideLibrary">
+        </div>
+    </div>
+
+    <div id="addMusicContainer">
+        <div id="addMusicIcon">+</div>
+        <p>Music Name:</p><input id="musicNameInput" type="text">
+        <p>Artist Name:</p><input id="artistNameInput" type="text">
+        <p>Image File:</p><input id="imageFileInput" type="url">
+        <p>Audio File:</p><input id="audioFileInput" type="url">
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
